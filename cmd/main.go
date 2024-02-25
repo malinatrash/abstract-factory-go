@@ -13,6 +13,7 @@ func main() {
 
 	for factory == nil {
 		var choice int
+		fmt.Println("---------------------–––––")
 		fmt.Println("Выберите линейку костюмов:")
 		for index, brand := range brands {
 			fmt.Printf("%d. %s\n", index+1, brand)
@@ -25,6 +26,8 @@ func main() {
 			if err != nil {
 				fmt.Printf("%s\n", err)
 			}
+		} else {
+			fmt.Println("Ошибка")
 		}
 	}
 
