@@ -32,8 +32,13 @@ func main() {
 	}
 
 	var batchSize int
-	fmt.Print("Введите размер партии: ")
-	fmt.Scanln(&batchSize)
+	for batchSize <= 0 {
+		fmt.Print("Введите размер партии: ")
+		fmt.Scanln(&batchSize)
+		if batchSize <= 0 {
+			fmt.Println("Размер партии должен быть натуральным числом!")
+		}
+	}
 
 	jacket := factory.GetJacket()
 	pant := factory.GetPant()

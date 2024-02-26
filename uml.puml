@@ -1,0 +1,50 @@
+@startuml Factory
+interface Factory {
+    +GetJacket(): Jacket
+    +GetPant(): Pant
+}
+
+interface Jacket {
+    +PrintDetails(): string
+}
+
+interface Pant {
+    +PrintDetails(): string
+}
+
+class KotofeyFactory {
+    +GetJacket(): Jacket
+    +GetPant(): Pant
+}
+
+class CambridgeProfessorFactory {
+    +GetJacket(): Jacket
+    +GetPant(): Pant
+}
+
+class KotofeyJacket {
+    +PrintDetails(): string
+}
+
+class KotofeyPant {
+    +PrintDetails(): string
+}
+
+class CambridgeProfessorJacket {
+    +PrintDetails(): string
+}
+
+class CambridgeProfessorPant {
+    +PrintDetails(): string
+}
+
+Factory <|.. KotofeyFactory
+Factory <|.. CambridgeProfessorFactory
+
+Jacket <|.. KotofeyJacket
+Jacket <|.. CambridgeProfessorJacket
+
+Pant <|.. KotofeyPant
+Pant <|.. CambridgeProfessorPant
+
+@enduml
